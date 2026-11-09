@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三处硬伤 — ZeroCarbon Verify 拆解</title>
+<meta name="description" content="同一生态的 live label、用 FNV-1a 冒充不可篡改、以及一个把透明当卖点的站上的三组自相矛盾数字。附修法。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      Teardown <small>carbonverify.cn</small>
+    </a>
+    <nav>
+      <div class="item"><a class="lnk" href="index.html">判决</a></div>
+      <div class="item">
+        <a class="lnk" href="model.html">模型</a>
+        <div class="dr">
+          <a href="model.html"><b>四层价值栈</b><span>谁付钱 / 谁签字 / 谁被免责</span></a>
+          <a href="model.html#unit"><b>单位经济性</b><span>单农场 ¥84,000 怎么算出来</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="revenue.html">收入</a>
+        <div class="dr">
+          <a href="revenue.html#engines"><b>六个引擎</b><span>只有两个能养活公司</span></a>
+          <a href="revenue.html#calc"><b>测算器</b><span>拖一下，看模型在哪断裂</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="bugs.html">破绽</a>
+        <div class="dr">
+          <a href="bugs.html#fatal"><b>致命 / 高 / 中</b><span>三处必须立刻修</span></a>
+          <a href="bugs.html#numbers"><b>数字打架</b><span>自称透明却自相矛盾</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="rebuild.html">重建</a>
+        <div class="dr">
+          <a href="rebuild.html#lines"><b>六条新业务线</b><span>我会从这里长出什么</span></a>
+          <a href="rebuild.html#plan"><b>90 天</b><span>先做哪一件</span></a>
+        </div>
+      </div>
+      <div class="item"><a class="lnk" href="method.html">方法</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section style="padding-top:72px">
+  <div class="wrap">
+    <div class="eyebrow">Defects · 03</div>
+    <h1 style="font-size:clamp(32px,4.2vw,50px);max-width:22ch">它最大的资产是诚实。<br>所以这三处最贵。</h1>
+    <p class="lead" style="margin-top:24px">一个靠"主动交代缺陷"建立信任的机构，最怕的不是有缺陷，是缺陷被外部先发现。以下三处，采购方用十分钟就能查出来。</p>
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="wrap">
+    <div class="eyebrow">01 — Severity</div>
+    <h2>严重度矩阵</h2>
+    <div class="tbl-wrap" style="margin-top:28px">
+      <table class="tbl">
+        <thead><tr><th>#</th><th>问题</th><th>严重度</th><th>发现成本</th><th>修法成本</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="num">01</td>
+            <td class="rh">唯一真实标签来自同一创始人生态</td>
+            <td><span class="pill d">致命</span></td>
+            <td class="num">10 分钟</td>
+            <td class="num">1 个月</td>
+          </tr>
+          <tr>
+            <td class="num">02</td>
+            <td class="rh">FNV-1a 哈希链，冒充不可篡改</td>
+            <td><span class="pill c">高</span></td>
+            <td class="num">30 秒</td>
+            <td class="num">2 天</td>
+          </tr>
+          <tr>
+            <td class="num">03</td>
+            <td class="rh">公开数字自相矛盾（三组）</td>
+            <td><span class="pill c">中</span></td>
+            <td class="num">5 分钟</td>
+            <td class="num">1 天</td>
+          </tr>
+          <tr>
+            <td class="num">04</td>
+            <td class="rh">品牌名 ZeroCarbon 卖的是 Verification</td>
+            <td><span class="pill b">低</span></td>
+            <td class="num">读标题</td>
+            <td class="num">1 小时</td>
+          </tr>
+          <tr>
+            <td class="num">05</td>
+            <td class="rh">大陆 CNAS 明确不申请 → TAM 只剩出口导向供应商</td>
+            <td><span class="pill b">低（策略性）</span></td>
+            <td class="num">公开</td>
+            <td class="num">不需修，需说清</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="fatal">
+  <div class="wrap">
+    <div class="eyebrow">02 — Fatal</div>
+    <h2 style="max-width:26ch">唯一一张真实标签，来自自己的生态</h2>
+
+    <div class="callout red">
+      <p>网站宣称 <b style="color:#fff">"0 equity held in the parties we verify"</b>（不对被验证方持股）。但注册表里那张唯一的 live label —— <span class="mono">CJ-CN-2026-0712-63E7</span>，0.1951 kgCO₂e/plantlet，grade B —— 来自 <span class="mono">coffeejev.space</span>，而方法编号本身就是 <span class="mono">CJV-MTH-1.0</span>。CJV 是同一个人。</p>
+    </div>
+
+    <div class="two" style="margin-top:34px">
+      <div>
+        <h3>为什么这一条是致命的</h3>
+        <p>独立性的关键在于"声明的形式"还是"事实的结构"？在认证行业，答案永远是后者。一家验证机构的第一张标签，比其后一百张都重要 —— 它定义了这家机构在压力下会怎么选择。</p>
+        <p>如果第一张标签来自创始人的另一个项目：</p>
+        <ul style="color:#c9d1d9;font-size:15px;padding-left:20px;line-height:1.85">
+          <li><b style="color:var(--text)">实际作用</b>：它证明了管线能跑通</li>
+          <li><b style="color:var(--text)">象征作用</b>：它证明不了任何独立性</li>
+        </ul>
+        <p style="margin-top:16px">"0 equity" 是一句关于<b style="color:var(--text)">股权</b>的陈述，不是关于<b style="color:var(--text)">控制权、薪酬、共同创始人、共同供应商</b>的陈述。用一条窄口径声明去覆盖一个宽口径风险，是 ESG 行业最典型的手法 —— 由一家把"反 greenwashing"当使命的机构来做，代价更高。</p>
+      </div>
+      <div class="side">
+        <div class="card danger">
+          <div class="num">修法 · 三条，按成本排序</div>
+          <h3 style="margin-bottom:14px">先止血，再补结构</h3>
+          <p style="margin-bottom:12px"><b style="color:var(--text)">1 · 三十天内引入两到三张外部标签。</b>任何愿意免费试的农场、任何一家出口商。不必好看，必须来自无关第三方。</p>
+          <p style="margin-bottom:12px"><b style="color:var(--text)">2 · 把口径改准。</b>不要说 "0 equity"，说 "no shareholding, no commission, and full disclosure of founder's other interests" —— 并披露咖啡平台的关系。</p>
+          <p style="margin-bottom:0"><b style="color:var(--text)">3 · 长期。</b>把平台股权放进盲信托，或干脆把验证机构交给一个不含创始人的董事会。这条会痛，但它是唯一能让"独立"从形容词变成名词的办法。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hash">
+  <div class="wrap">
+    <div class="eyebrow">03 — Hash</div>
+    <h2 style="max-width:28ch">用 FNV-1a 说"不可篡改"，是技术上站不住的</h2>
+
+    <p class="lead" style="margin-top:20px">全站的核心承诺是：任何人可以在浏览器里重算哈希，所以记录不能被事后修改。这个思路对，选错了函数。</p>
+
+    <div class="two" style="margin-top:30px">
+      <div>
+        <h3>问题</h3>
+        <p><span class="mono">FNV-1a</span> 是 32/64 位非密码学哈希。它的设计目标是快速散列，不是抗碰撞。这意味着：</p>
+        <ul style="color:#c9d1d9;font-size:15px;padding-left:20px;line-height:1.85">
+          <li>构造两条内容不同、哈希相同的记录，成本极低</li>
+          <li>有写权限的人可以<b style="color:var(--text)">重造整条链</b>，且链自洽</li>
+          <li>外人重算得到"一致"，因此看不出篡改</li>
+        </ul>
+        <p style="margin-top:16px">所以它提供的是<b style="color:var(--text)">完整性校验</b>（防手滑、防传输损坏），不是<b style="color:var(--text)">不可篡改性</b>（防对手）。网站把它描述成后者，是过度承诺。而这恰好是一份要拿去给采购部和法务部看的文件。</p>
+      </div>
+      <div>
+        <h3>修法</h3>
+        <p>把哈希换成 SHA-256，并把每日根锚定到公共时间戳。成本每条不到一分钱，还多出一个可卖的产品。</p>
+        <div class="code"><span class="c">// 现在的做法：链自洽，但可被重造</span>
+hash = fnv1a(prev_hash + payload)
+
+<span class="c">// 应该的做法：密码学承诺 + 外部时间锚</span>
+h    = sha256(canonical(payload))
+link = sha256(prev_hash || h)
+root = merkle_root(today_batch)
+<span class="c">// 每日一次，把 root 提交到 OpenTimestamps</span>
+ots stamp root  →  bitcoin block height</div>
+        <p class="small muted" style="margin-top:16px">这样"不可篡改"就不再依赖网站自己的服务器：要篡改，就得同时篡改一条公共链的历史。同时这一步天然可以按"锚定服务"收费 —— 见 <a href="rebuild.html" class="accent">重建方案</a> 第 2 条。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="eyebrow">04 — Numbers</div>
+    <h2>三组数字，在同一个站上互相打脸</h2>
+
+    <div class="tbl-wrap" style="margin-top:28px">
+      <table class="tbl">
+        <thead><tr><th>项目</th><th>A 处说法</th><th>B 处说法</th><th>差异</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="rh">注册表记录数</td>
+            <td class="num">首页：20 条参考记录</td>
+            <td class="num">注册表页正文：100 条中 1 条 live、99 条模拟</td>
+            <td class="num bad">5×</td>
+          </tr>
+          <tr>
+            <td class="rh">EUDR 集装箱包价格</td>
+            <td class="num">首页 / 专页：¥3,000–8,000 / 柜</td>
+            <td class="num">model 页：¥2,000 / 柜</td>
+            <td class="num bad">−33% ~ −75%</td>
+          </tr>
+          <tr>
+            <td class="rh">典型批次量</td>
+            <td class="num">500 批 / 场 / 年（"typical"）</td>
+            <td class="num">免费层上限：2 批 / 年</td>
+            <td class="num warn">256×</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:24px;max-width:78ch">第三组不算矛盾 —— 免费层本来就是故意做残的。但它和"500 批/年 typical"并列出现在同一份材料里，会让读者对"typical"这个词产生合理怀疑：这是一个真实的中位数，还是一个为了让单位经济性好看的假设？</p>
+
+    <div class="callout yellow">
+      <p><b style="color:#fff">在一个把"透明"当作唯一差异化壁垒的机构里，数字不一致的代价比在别处高十倍。</b>因为它的整个说服链条是"你不需要相信我，你可以自己算"。一旦别人算出两个不同的数，这条链就断了 —— 而断点不在数据上，在可信度上。</p>
+    </div>
+
+    <p style="margin-top:22px">修法很简单：单一数据源生成所有页面。注册表条数、单价、典型批次量各定义一个常量，页面渲染时读取。一天的工作量，换回整个叙事的一致性。</p>
+  </div>
+</section>
+
+<section id="others">
+  <div class="wrap">
+    <div class="eyebrow">05 — Also</div>
+    <h2>三件不致命但削弱定位的事</h2>
+    <div class="grid g3" style="margin-top:32px">
+      <div class="card reveal">
+        <div class="num">01 · 品牌</div>
+        <h3>ZeroCarbon 卖的是 Verify</h3>
+        <p>名字承诺"零碳"，产品交付"验证"。第一个词是它明确反对的东西（不做 offset、不做 credit）。建议只保留 Verify，或改成能承载"证据"语义的词。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">02 · 市场</div>
+        <h3>CNAS 不申请是对的，但要写清</h3>
+        <p>大陆碳核查需备案资质。它明确不申请，等于把 TAM 限定为出口导向供应商（EUDR / CBAM 客户）。这是聪明的楔子，但必须写在定价页上，否则大陆客户会误认。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">03 · 阶段</div>
+        <h3>它还不是公司，是文档</h3>
+        <p>一份方法论 + 20 条模拟 + 0 个签名伙伴。用"公司"的语言描述"项目"的阶段，会在第一次尽调里全部退回。承认"pre-revenue"反而更快。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center">
+    <p class="note" style="margin:0">下一页 · 如果这是我的公司，我会怎么建</p>
+    <a href="rebuild.html" style="font-family:var(--mono);font-size:14px;color:var(--accent)">重建方案 →</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-col">
+        <h4>关于本站</h4>
+        <p>对 carbonverify.cn 的独立第三方拆解。与 ZeroCarbon Verify 无关联、未获授权、不代表其观点。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面</h4>
+        <p><a href="index.html">判决</a> · <a href="model.html">商业模型</a></p>
+        <p><a href="revenue.html">收入模型</a> · <a href="rebuild.html">重建方案</a></p>
+      </div>
+      <div class="foot-col">
+        <h4>版本</h4>
+        <p class="mono">teardown v1.0 · 2026-11-09</p>
+        <p class="mono dim">built by Coda</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

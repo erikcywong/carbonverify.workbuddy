@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>重建方案 — 如果这是我的公司</title>
+<meta name="description" content="六条我会真正做的业务线，按现金流→护城河→规模排序，附八季度时序与 90 天执行顺序。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      Teardown <small>carbonverify.cn</small>
+    </a>
+    <nav>
+      <div class="item"><a class="lnk" href="index.html">判决</a></div>
+      <div class="item">
+        <a class="lnk" href="model.html">模型</a>
+        <div class="dr">
+          <a href="model.html"><b>四层价值栈</b><span>谁付钱 / 谁签字 / 谁被免责</span></a>
+          <a href="model.html#unit"><b>单位经济性</b><span>单农场 ¥84,000 怎么算出来</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="revenue.html">收入</a>
+        <div class="dr">
+          <a href="revenue.html#engines"><b>六个引擎</b><span>只有两个能养活公司</span></a>
+          <a href="revenue.html#calc"><b>测算器</b><span>拖一下，看模型在哪断裂</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="bugs.html">破绽</a>
+        <div class="dr">
+          <a href="bugs.html#fatal"><b>致命 / 高 / 中</b><span>三处必须立刻修</span></a>
+          <a href="bugs.html#numbers"><b>数字打架</b><span>自称透明却自相矛盾</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="rebuild.html">重建</a>
+        <div class="dr">
+          <a href="rebuild.html#lines"><b>六条新业务线</b><span>我会从这里长出什么</span></a>
+          <a href="rebuild.html#plan"><b>90 天</b><span>先做哪一件</span></a>
+        </div>
+      </div>
+      <div class="item"><a class="lnk" href="method.html">方法</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section style="padding-top:72px">
+  <div class="wrap">
+    <div class="eyebrow">Rebuild · 04</div>
+    <h1 style="font-size:clamp(32px,4.2vw,50px);max-width:24ch">如果这是我的公司，<br>我会砍掉一半产品线</h1>
+    <p class="lead" style="margin-top:24px">现在这六条收入线是并列展示的，读起来像组合拳。但它们服务的是六种不同的公司、六种销售组织、六种估值逻辑。以下是我会留下来的六条 —— 顺序不是重要性，是<b style="color:var(--text)">时间</b>。</p>
+  </div>
+</section>
+
+<section id="timing">
+  <div class="wrap">
+    <div class="eyebrow">01 — Sequence</div>
+    <h2>哪一条在哪个季度开始产生现金</h2>
+
+    <figure class="reveal">
+      <svg viewBox="0 0 1000 380" role="img" aria-label="六条业务线的现金产生时序">
+        <title>六条业务线 · 八季度现金时序</title>
+        <desc>货代渠道与锚定服务在 Q1 即有收入；反向审计 Q4；征信局 Q5；自动分级 Q6；履约保证需要三年数据，Q7 之后。</desc>
+
+        <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#5c6b78">
+          <text x="293" y="74" text-anchor="middle">Q1</text>
+          <text x="379" y="74" text-anchor="middle">Q2</text>
+          <text x="465" y="74" text-anchor="middle">Q3</text>
+          <text x="551" y="74" text-anchor="middle">Q4</text>
+          <text x="637" y="74" text-anchor="middle">Q5</text>
+          <text x="723" y="74" text-anchor="middle">Q6</text>
+          <text x="809" y="74" text-anchor="middle">Q7</text>
+          <text x="895" y="74" text-anchor="middle">Q8</text>
+        </g>
+
+        <g stroke="#171b1f" stroke-width="1">
+          <line x1="250" y1="86" x2="250" y2="344"/>
+          <line x1="336" y1="86" x2="336" y2="344"/>
+          <line x1="422" y1="86" x2="422" y2="344"/>
+          <line x1="508" y1="86" x2="508" y2="344"/>
+          <line x1="594" y1="86" x2="594" y2="344"/>
+          <line x1="680" y1="86" x2="680" y2="344"/>
+          <line x1="766" y1="86" x2="766" y2="344"/>
+          <line x1="852" y1="86" x2="852" y2="344"/>
+          <line x1="938" y1="86" x2="938" y2="344"/>
+        </g>
+
+        <g font-family="Inter, sans-serif" font-size="13" fill="#c9d1d9">
+          <text x="40" y="112">① 货代 / 报关行渠道</text>
+          <text x="40" y="156">② 锚定即服务</text>
+          <text x="40" y="200">④ 反向审计（审买方）</text>
+          <text x="40" y="244">⑤ 注册表 · 征信局</text>
+          <text x="40" y="288">⑥ 无人化自动分级</text>
+          <text x="40" y="332">③ 标签履约保证</text>
+        </g>
+
+        <g>
+          <rect x="250" y="96" width="688" height="24" fill="#123a52" stroke="#1d9bf0" stroke-width="1"/>
+          <rect x="250" y="140" width="688" height="24" fill="#123a52" stroke="#1d9bf0" stroke-width="1"/>
+          <rect x="508" y="184" width="430" height="24" fill="#0f2a22" stroke="#1f6f57" stroke-width="1"/>
+          <rect x="594" y="228" width="344" height="24" fill="#0f2a22" stroke="#1f6f57" stroke-width="1"/>
+          <rect x="680" y="272" width="258" height="24" fill="#0f2a22" stroke="#1f6f57" stroke-width="1"/>
+          <rect x="766" y="316" width="172" height="24" fill="#3a2f0a" stroke="#8c7314" stroke-width="1"/>
+        </g>
+
+        <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#000">
+          <text x="262" y="112" fill="#a8d8fb">Q1 起收现金</text>
+          <text x="262" y="156" fill="#a8d8fb">Q1 起收现金 · 毛利 ~100%</text>
+          <text x="520" y="200" fill="#b8e8d6">Q4 起</text>
+          <text x="606" y="244" fill="#b8e8d6">Q5 起 · 需法人隔离</text>
+          <text x="692" y="288" fill="#b8e8d6">Q6 起 · Q3 开始建</text>
+          <text x="778" y="332" fill="#ffdf6b">Q7 起 · 需 3 年数据</text>
+        </g>
+
+        <text x="40" y="368" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5c6b78">蓝 = 立刻可卖 · 绿 = 需结构或数据前置 · 黄 = 需历史损失数据</text>
+      </svg>
+      <figcaption>图 3 · 我版本里的收入时序。空白区不是"以后再做"，是"现在做了也收不到钱"。</figcaption>
+    </figure>
+
+    <div class="callout">
+      <p>注意这个时序暴露的事：<b style="color:#fff">原方案里权重最大的两条（供应商计划、注册表白标）都不在最快现金流的位置上。</b>它们值钱，但都要 6–12 个月的采购周期。一家没有融资的 5 人公司，在这段时间里会先死掉。</p>
+    </div>
+  </div>
+</section>
+
+<section id="lines">
+  <div class="wrap">
+    <div class="eyebrow">02 — Six lines</div>
+    <h2>六条我会真的做的事</h2>
+
+    <div style="margin-top:40px">
+
+      <div style="padding:32px 0;border-top:1px solid var(--line)">
+        <div class="two">
+          <div>
+            <span class="pill b" style="margin-bottom:14px">现金流 · Q1</span>
+            <h3 style="font-size:22px;margin-bottom:14px">① 把 EUDR / CBAM 包塞进报关行和货代的账单</h3>
+            <p>分销管道不是品牌，是<b style="color:var(--text)">货代</b>。理由有四条，每一条都独立成立：按票收费（现成的计费系统）、必须保清关（比品牌更痛）、成本可转嫁发货人（不占自己预算）、决策链只有一个人（操作经理）。</p>
+            <p>EUDR 与 CBAM 都按 shipment 执行，收费点数天然对齐。品牌那边要过采购、法务、可持续三个部门，货代这边一顿饭。</p>
+          </div>
+          <div>
+            <dl class="kv">
+              <dt>买家</dt><dd>货代 / 报关行（一级），发货人（成本承担者）</dd>
+              <dt>定价</dt><dd>¥300–800 / 票，年框预付 20 柜起</dd>
+              <dt>为什么现在</dt><dd>EU 延期反而帮忙：客户有时间建流程，但没有时间等认证</dd>
+              <dt>第一笔钱</dt><dd>一家中型货代，年 3,000 票 → ¥150–240 万</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:32px 0;border-top:1px solid var(--line)">
+        <div class="two">
+          <div>
+            <span class="pill b" style="margin-bottom:14px">毛利 · Q1</span>
+            <h3 style="font-size:22px;margin-bottom:14px">② 锚定即服务：卖"自某日起已被公证"</h3>
+            <p>把哈希链的每日根提交到公共时间戳（OpenTimestamps → Bitcoin）。卖的不是哈希，是<b style="color:var(--text)">一个第三方无法否认的时间点</b>。用途：合同纠纷、保险理赔、海关争议、诉讼证据。</p>
+            <p>这一条之所以必须先做，因为它是唯一一条：边际成本≈0、不需要持证方、不需要客户教育、且顺手把破绽 02 修掉的业务。</p>
+            <div class="code">锚定一次 → 一份 .ots 证明
+验证 → 不需要我们的服务器
+定价 → ¥2–5 / 条 · 年度证书包 ¥5,000</div>
+          </div>
+          <div>
+            <dl class="kv">
+              <dt>买家</dt><dd>所有已有客户 + 律所 + 保险公估</dd>
+              <dt>定价</dt><dd>¥2–5 / 条；批量年包 ¥5,000–30,000</dd>
+              <dt>毛利</dt><dd>≈ 100%（成本是几美分的手续费）</dd>
+              <dt>副作用</dt><dd>FNV-1a 换成 SHA-256 + 锚定，"不可篡改"这句话才第一次成立</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:32px 0;border-top:1px solid var(--line)">
+        <div class="two">
+          <div>
+            <span class="pill c" style="margin-bottom:14px">护城河 · Q7</span>
+            <h3 style="font-size:22px;margin-bottom:14px">③ 标签履约保证：标签被撤销，就赔付买方</h3>
+            <p>把证据变成金融产品。买方买标签时同时买一份保证：若该标签在 24 个月内被撤销或推翻，按声明货值比例赔付。</p>
+            <p>定价靠<b style="color:var(--text)">历史撤销率</b>。这正是它唯一的真护城河 —— 别人可以抄方法、抄价格、抄界面，但抄不了你的损失曲线。需要三年数据，所以排在 Q7：现在开始记录，三年后才有资格卖。</p>
+            <p style="color:var(--muted);font-size:14px">注意：这一条和它"不做 outcome fee"的原则不冲突 —— 保证费是事前定价的风险对价，不是事后从结论里分成。</p>
+          </div>
+          <div>
+            <dl class="kv">
+              <dt>买家</dt><dd>进口商、品牌采购、贸易融资方</dd>
+              <dt>定价</dt><dd>声明货值的 0.15–0.4%，最低 ¥800/柜</dd>
+              <dt>前置</dt><dd>≥ 3 年撤销/争议记录；再保合作</dd>
+              <dt>壁垒</dt><dd>损失曲线 = 数据资产 = 不可复制</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:32px 0;border-top:1px solid var(--line)">
+        <div class="two">
+          <div>
+            <span class="pill a" style="margin-bottom:14px">高付费 · Q4</span>
+            <h3 style="font-size:22px;margin-bottom:14px">④ 反向审计：审买方的绿色声明，不审供应商</h3>
+            <p>EU 绿色声明指令生效后，<b style="color:var(--text)">品牌被诉的风险大于供应商被罚的风险</b>。市场现在缺的不是"更严的供应商审核"，是"品牌自己那句话站不站得住"的证据。</p>
+            <p>卖 ¥20–50 万/年给品牌<b style="color:var(--text)">法务</b>，不卖采购。法务预算比 ESG 预算硬得多，而且法务的痛点是"被起诉"，不是"报告不好看"。</p>
+            <p style="color:var(--muted);font-size:14px">责任结构反而更干净：委托人 = 被审方，这在咨询里是常态（法务审计、税务审计都是这样），不需要 17065 的独立性幻觉。</p>
+          </div>
+          <div>
+            <dl class="kv">
+              <dt>买家</dt><dd>品牌法务 / 合规 / 投资者关系</dd>
+              <dt>定价</dt><dd>¥20–50 万 / 年，或按声明条数 ¥8,000–15,000/条</dd>
+              <dt>为什么高</dt><dd>罚款与集体诉讼的量级是百万到千万</dd>
+              <dt>竞争</dt><dd>律所在做但没有计量能力，验证机构在做但不敢审客户</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:32px 0;border-top:1px solid var(--line)">
+        <div class="two">
+          <div>
+            <span class="pill c" style="margin-bottom:14px">数据 · Q5</span>
+            <h3 style="font-size:22px;margin-bottom:14px">⑤ 注册表做成征信局：卖分布，不卖个案</h3>
+            <p>当记录足够多，真正值钱的不是单条标签，是<b style="color:var(--text)">"某产地某品类的 A 级占比是多少"</b>这种只有跨客户才能看到的分布。</p>
+            <p>但这一条有一个不可让的硬条件：<b style="color:var(--text)">法人隔离</b>。评级方 ≠ 数据卖方。一旦同一个人既给等级又卖等级分布，整个独立性叙事在一夜之间归零。所以它必须排在被拆分成两个实体之后。</p>
+          </div>
+          <div>
+            <dl class="kv">
+              <dt>买家</dt><dd>银行、保险、大宗贸易商、指数机构</dd>
+              <dt>定价</dt><dd>订阅 ¥10–30 万 / 年 / 机构</dd>
+              <dt>前置</dt><dd>≥ 2,000 条真实记录 + 实体拆分</dd>
+              <dt>风险</dt><dd>这是唯一一条能毁掉前四条的业务</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:32px 0;border-top:1px solid var(--line)">
+        <div class="two">
+          <div>
+            <span class="pill a" style="margin-bottom:14px">终局 · Q6</span>
+            <h3 style="font-size:22px;margin-bottom:14px">⑥ 无人化自动分级：¥2–5/批，贴到电商 QR 上</h3>
+            <p>这是唯一能到百倍的路径，也是唯一能真正兑现"每个产品都带证据"这件事的路径。做法：PLC / SCADA 直连 → 遥测决定 grade → 无人工签发 → 标签随 SKU 生成。</p>
+            <p>关键判断：<b style="color:var(--text)">¥40–80/批在快消品上永远不可能成立</b>。一罐咖啡的毛利撑不起 ¥80 的证据成本。只有降到个位数、且零人工，才可能成为基础设施 —— 也就是"QR 时代的公平贸易标"。</p>
+            <p style="color:var(--muted);font-size:14px">这条一旦跑通，公司性质就变了：从认证服务商变成计量基础设施。估值逻辑从 3–5× 收入变成 15–25× ARR。</p>
+          </div>
+          <div>
+            <dl class="kv">
+              <dt>买家</dt><dd>零售商 / 电商平台 / 快消品牌</dd>
+              <dt>定价</dt><dd>¥2–5 / 批，按 SKU 年包</dd>
+              <dt>前置</dt><dd>设备直连协议 + 分级算法 + 至少一家零售商背书</dd>
+              <dt>门槛</dt><dd>不是技术，是让工厂愿意把 PLC 接口交出来</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="eyebrow">03 — First 90 days</div>
+    <h2>90 天：只做四件事</h2>
+
+    <ol class="steps" style="margin-top:38px">
+      <li class="reveal">
+        <h3>第 1–14 天 · 换哈希，加锚定</h3>
+        <p>FNV-1a → SHA-256，每日根提交 OpenTimestamps。顺手把"不可篡改"从形容词变成技术事实，并定价为一项服务。这一步同时修掉一处硬伤、开出一条新收入线。</p>
+        <div class="pill">2 天工程量</div>
+        <div class="pill">修破绽 02</div>
+      </li>
+      <li class="reveal">
+        <h3>第 15–45 天 · 拿三张外部真标签</h3>
+        <p>不要钱，只要来自无关第三方。任何一家愿意配合的出口商、任何一个农场。这一条不做，前面所有精妙结构都只是自我声明。同时把 "0 equity" 的口径改准，披露创始人其他项目的关系。</p>
+        <div class="pill">修破绽 01</div>
+        <div class="pill d">最关键</div>
+      </li>
+      <li class="reveal">
+        <h3>第 46–75 天 · 签下第一家货代</h3>
+        <p>目标不是品牌，是一家年 2,000 票以上的中型货代。用 EUDR 包做切入点，价格按票不按项目。首单可以是免费试跑 20 票，但必须走完真实的清关流程。</p>
+        <div class="pill b">第一笔现金流</div>
+      </li>
+      <li class="reveal">
+        <h3>第 76–90 天 · 统一数字，重写首页</h3>
+        <p>注册表条数、单价、典型批次量改成单一数据源生成。首页把那句"我们不做认证"放到比 slogan 更显眼的位置。承认 pre-revenue 阶段，比用"公司"的语言描述一个项目更可信。</p>
+        <div class="pill">修破绽 03</div>
+      </li>
+    </ol>
+
+    <div class="callout green" style="margin-top:10px">
+      <p><b style="color:#fff">为什么这个顺序不能反。</b>先修技术，因为它是唯一能在两天内完成的；再拿外部标签，因为它决定后面所有销售对话能否开始；再签货代，因为现金流决定公司能不能活到 Q4；最后重写首页，因为前四件事做完之后，首页才有东西可写。反过来做，就是先写文案再找证据 —— 那正是它现在的问题。</p>
+    </div>
+  </div>
+</section>
+
+<section id="stance">
+  <div class="wrap">
+    <div class="eyebrow">04 — Stance</div>
+    <div class="two">
+      <div>
+        <h2>这家公司真正的赌注</h2>
+        <p style="margin-top:20px">不是"碳核算会变重要"（这已经发生），而是<b style="color:var(--text)">"签字会变便宜，而证据不会"</b>。</p>
+        <p>如果 EU 的互认体系最终让验证服务商品化，签字费会归零 —— 那时唯一值钱的是那条别人无法重造的记录链。它现在的整个结构，是在为那一天下注。</p>
+        <p>我认为这个判断是对的。但它有一个前提被低估了：<b style="color:var(--text)">证据的价值取决于有多少人愿意用它做决定</b>。一条没人依赖的记录，哈希再完美也只是数据。</p>
+      </div>
+      <div class="side">
+        <div class="card hi">
+          <div class="num">我的判断</div>
+          <h3 style="margin-bottom:14px">三个月的三个里程碑</h3>
+          <p style="margin-bottom:10px"><b style="color:var(--text)">① 一张外部真标签</b> —— 证明管线是公共的，不是自家的</p>
+          <p style="margin-bottom:10px"><b style="color:var(--text)">② 一份锚定证明</b> —— 证明"不可篡改"不是形容词</p>
+          <p style="margin-bottom:0"><b style="color:var(--text)">③ 一张货代发票</b> —— 证明有人会为证据付现金</p>
+          <p class="note" style="margin-top:18px">三个都做到，这家公司成立。任何一个没做到，剩下两个都不算数。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center">
+    <p class="note" style="margin:0">下一页 · 分析方法、数据来源、以及这份分析的局限</p>
+    <a href="method.html" style="font-family:var(--mono);font-size:14px;color:var(--accent)">方法 →</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-col">
+        <h4>关于本站</h4>
+        <p>对 carbonverify.cn 的独立第三方拆解。与 ZeroCarbon Verify 无关联、未获授权、不代表其观点。本页为个人商业判断，非投资建议。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面</h4>
+        <p><a href="index.html">判决</a> · <a href="model.html">商业模型</a></p>
+        <p><a href="revenue.html">收入模型</a> · <a href="bugs.html">破绽</a></p>
+      </div>
+      <div class="foot-col">
+        <h4>版本</h4>
+        <p class="mono">teardown v1.0 · 2026-11-09</p>
+        <p class="mono dim">built by Coda</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

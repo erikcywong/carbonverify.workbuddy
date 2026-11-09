@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZeroCarbon Verify 拆解 — 它卖的不是认证</title>
+<meta name="description" content="对 carbonverify.cn（ZeroCarbon Verify）商业模式与收入模型的独立拆解：价值栈、单位经济性、六条收入引擎、三处硬伤，以及我认为它应该长成的样子。">
+<link rel="canonical" href="https://erikcywong.github.io/carbonverify.workbuddy/">
+<meta property="og:title" content="ZeroCarbon Verify 拆解 — 它卖的不是认证">
+<meta property="og:description" content="独立拆解 carbonverify.cn 的商业模式、收入模型与结构性漏洞。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      Teardown <small>carbonverify.cn</small>
+    </a>
+    <nav>
+      <div class="item"><a class="lnk" href="index.html">判决</a></div>
+      <div class="item">
+        <a class="lnk" href="model.html">模型</a>
+        <div class="dr">
+          <a href="model.html"><b>四层价值栈</b><span>谁付钱 / 谁签字 / 谁被免责</span></a>
+          <a href="model.html#unit"><b>单位经济性</b><span>单农场 ¥84,000 怎么算出来</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="revenue.html">收入</a>
+        <div class="dr">
+          <a href="revenue.html#engines"><b>六个引擎</b><span>只有两个能养活公司</span></a>
+          <a href="revenue.html#calc"><b>测算器</b><span>拖一下，看模型在哪断裂</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="bugs.html">破绽</a>
+        <div class="dr">
+          <a href="bugs.html#fatal"><b>致命 / 高 / 中</b><span>三处必须立刻修</span></a>
+          <a href="bugs.html#numbers"><b>数字打架</b><span>自称透明却自相矛盾</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="rebuild.html">重建</a>
+        <div class="dr">
+          <a href="rebuild.html#lines"><b>六条新业务线</b><span>我会从这里长出什么</span></a>
+          <a href="rebuild.html#plan"><b>90 天</b><span>先做哪一件</span></a>
+        </div>
+      </div>
+      <div class="item"><a class="lnk" href="method.html">方法</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="tag"><i></i>独立拆解 · 非官方 · 未获授权</span>
+    <h1>它卖的<em>不是认证</em>。<br>是认证结论下面那层<br>谁都能自己复算的证据。</h1>
+    <p class="sub">对 <span class="mono">carbonverify.cn</span>（ZeroCarbon Verify）商业模式与收入模型的拆解。含我认为它最锋利的三个设计、三处会致命的漏洞，以及如果这是我的公司，我会把它长成什么样。</p>
+
+    <div class="stamp">
+      <div>
+        <div class="k">收入引擎</div>
+        <div class="v">6<span style="color:var(--dim);font-size:14px"> 条</span></div>
+        <div class="n">只有 2 条能养活公司</div>
+      </div>
+      <div>
+        <div class="k">单场留存</div>
+        <div class="v">¥84k</div>
+        <div class="n">500 批/年 · 我核算</div>
+      </div>
+      <div>
+        <div class="k">签名分成</div>
+        <div class="v" style="color:var(--bad)">¥40</div>
+        <div class="n">每次签发 · 不现实</div>
+      </div>
+      <div>
+        <div class="k">验证毛利</div>
+        <div class="v">≈ 0</div>
+        <div class="n">成本定价，不是利润中心</div>
+      </div>
+      <div>
+        <div class="k">真标签</div>
+        <div class="v" style="color:var(--warn)">1</div>
+        <div class="n">且来自同一生态</div>
+      </div>
+      <div>
+        <div class="k">签名伙伴</div>
+        <div class="v" style="color:var(--bad)">0</div>
+        <div class="n">网站自己承认</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="verdict">
+  <div class="wrap">
+    <div class="eyebrow">01 — Verdict</div>
+    <div class="two">
+      <div>
+        <h2>一次精准的牌照套利</h2>
+        <p class="lead" style="margin-top:22px">认证行业的核心资产是牌照，不是能力。ZeroCarbon Verify 做的事很清楚：把需要 <span class="mono">ISO/IEC 17065</span> 牌照的签字权，外包给已经持牌的伙伴；把不需要牌照的计量、分级、哈希、注册表，全部留在自己手里。</p>
+        <p>结果是一个位置极好的中间层 —— 它让持证方的签名<span class="accent">变得便宜、难以挑战</span>，同时自己永远不承担"下结论"的法律责任。买家拿到的不是一张证书，是一条可以在浏览器里重算的证据链。</p>
+        <blockquote>
+          签字可以被租用。<br>证据层不能。
+          <cite>— 网站自己的两轨计划，原话的意思是：the signing layer can be borrowed; the evidence layer cannot.</cite>
+        </blockquote>
+      </div>
+      <div class="side">
+        <div class="card hi reveal">
+          <div class="num">最锋利的一刀</div>
+          <h3>计量单位从"企业"降到"批次"</h3>
+          <p>EUDR、CBAM、海关、提单，全部作用于<b style="color:var(--text)">货物</b>，不作用于<b style="color:var(--text)">法人</b>。SGS / BV / TÜV 还在按企业出 Scope 3 报告。它直接对准货物流 —— 这不是改良，是换了坐标系。</p>
+        </div>
+        <div class="card danger reveal" style="margin-top:18px">
+          <div class="num">最脆弱的一刀</div>
+          <h3>¥40 一次签发，没有人会签</h3>
+          <p>500 批/年 = 500 次签发责任，持证方总共只拿 ¥20,000。任何持牌机构不会用 ¥40 承担一次 <span class="mono">17065</span> 责任。这个数字撑不起它自己的产品结构。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="eyebrow">02 — The stack</div>
+    <h2 style="max-width:22ch">四层价值栈：被验证方、付款方、受益方，三者必须不是同一个人</h2>
+
+    <figure class="reveal">
+      <svg viewBox="0 0 1000 348" role="img" aria-label="ZeroCarbon Verify 四层价值栈示意">
+        <title>四层价值栈</title>
+        <desc>外层为需 ISO 17065 认可的认证结论层，由持证伙伴签字；内层为不需要牌照的证据层，含三种可售产品。</desc>
+
+        <rect x="4" y="4" width="992" height="340" rx="22" fill="#0b0c0e" stroke="#2a3037" stroke-width="1"/>
+        <text x="44" y="46" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#8b98a5" letter-spacing="1.4">认证结论层 · 需 ISO/IEC 17065 认可 · 目前向持证伙伴借用签字权</text>
+
+        <rect x="28" y="66" width="944" height="152" rx="14" fill="#06231c" stroke="#1f6f57" stroke-width="1"/>
+        <text x="52" y="94" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#7ee0bd" letter-spacing="1.4">证据层 · 不需要牌照 · 网站实际在卖的三样</text>
+
+        <g font-family="Inter, sans-serif">
+          <rect x="48" y="110" width="292" height="90" rx="9" fill="#0a1f19" stroke="#2b5b4a" stroke-width="1"/>
+          <text x="68" y="138" font-size="16" font-weight="500" fill="#e7e9ea">已验证单元</text>
+          <text x="68" y="164" font-family="IBM Plex Mono, monospace" font-size="15" fill="#7ee0bd">¥40–80 / 批</text>
+          <text x="68" y="186" font-size="12.5" fill="#8b98a5">买家付 · 农场付 ¥0</text>
+
+          <rect x="354" y="110" width="292" height="90" rx="9" fill="#0a1f19" stroke="#2b5b4a" stroke-width="1"/>
+          <text x="374" y="138" font-size="16" font-weight="500" fill="#e7e9ea">EUDR 集装箱包</text>
+          <text x="374" y="164" font-family="IBM Plex Mono, monospace" font-size="15" fill="#7ee0bd">¥3,000–8,000 / 柜</text>
+          <text x="374" y="186" font-size="12.5" fill="#8b98a5">欧盟进口商付</text>
+
+          <rect x="660" y="110" width="292" height="90" rx="9" fill="#0a1f19" stroke="#2b5b4a" stroke-width="1"/>
+          <text x="680" y="138" font-size="16" font-weight="500" fill="#e7e9ea">注册表白标</text>
+          <text x="680" y="164" font-family="IBM Plex Mono, monospace" font-size="15" fill="#7ee0bd">¥3万–10万 / 年</text>
+          <text x="680" y="186" font-size="12.5" fill="#8b98a5">持证机构 · 协会 · ERP</text>
+        </g>
+
+        <text x="44" y="252" font-family="Inter, sans-serif" font-size="13.5" fill="#c9d1d9">钱怎么走：买方付 ¥80/批 → 其中 ¥40 固定给签字方 → 差额留在证据层。</text>
+        <text x="44" y="278" font-family="Inter, sans-serif" font-size="13.5" fill="#8b98a5">签字费不随结论变化 —— 这是这个结构唯一能说"不"的原因。</text>
+        <text x="44" y="312" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#5c6b78" letter-spacing="1">SUPPLIER ¥0  ·  BUYER PAYS  ·  PARTNER SIGNS  ·  EVIDENCE LAYER KEEPS THE SPREAD</text>
+      </svg>
+      <figcaption>图 1 · 结构支点：被验证方 ≠ 付款方 ≠ 受益方</figcaption>
+    </figure>
+
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card reveal">
+        <div class="num">为什么不向农场收费</div>
+        <p>向被验证方收费，它立刻变成"买结论"，证据失效。免费是结构性必要，不是慷慨。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">为什么不让签字费浮动</div>
+        <p>一旦签字费和结论质量挂钩，结论就可以被定价腐败。¥40 固定的真正价值是<b style="color:var(--text)">抗腐设计</b>，不是价格。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">为什么免费层要故意做残</div>
+        <p>grade U，不可引用，无 statement reference。免费用户永远拿不到"可被依赖"的东西 —— 反 freemium 自我蚕食。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="map">
+  <div class="wrap">
+    <div class="eyebrow">03 — Contents</div>
+    <h2>拆解索引</h2>
+    <div class="grid g2" style="margin-top:34px">
+      <a class="card reveal" href="model.html">
+        <div class="num">MODEL · 全文</div>
+        <h3>商业模型解剖</h3>
+        <p>四层栈、三方付款关系、单农场 ¥84,000 的完整推导、以及"验证业务毛利≈0"这件事为什么是设计而非失误。</p>
+      </a>
+      <a class="card reveal" href="revenue.html">
+        <div class="num">REVENUE · 全文 + 测算器</div>
+        <h3>六个引擎，两个真引擎</h3>
+        <p>每条收入线的单价、达成年限、可实现性排序。附交互测算器：拖动批次密度，看模型在哪里断裂。</p>
+      </a>
+      <a class="card reveal" href="bugs.html">
+        <div class="num">DEFECTS · 全文</div>
+        <h3>三处硬伤</h3>
+        <p>同一生态的 live label、FNV-1a 冒充不可篡改、以及一个把"透明"当卖点的站上出现的三组自相矛盾数字。</p>
+      </a>
+      <a class="card reveal" href="rebuild.html">
+        <div class="num">REBUILD · 我的方案</div>
+        <h3>如果这是我的公司</h3>
+        <p>六条我真正会做的业务线，按"现金流 → 护城河 → 规模"排序，附 90 天执行顺序。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="seven">
+  <div class="wrap">
+    <div class="eyebrow">04 — Surprises</div>
+    <h2 style="max-width:26ch">让我惊讶的七件事</h2>
+    <p class="lead" style="margin-top:20px">不是因为它们新，而是因为它们在一个靠模糊赚钱的行业里，选择了相反的方向。</p>
+
+    <ol class="steps" style="margin-top:44px">
+      <li class="reveal">
+        <h3>把"拒绝"做成了产品</h3>
+        <p>出不了结论照样按日费率收工时费，且"不给结论不收结论费"。拒绝有语义、有价格、有书面理由。多数认证机构做不到说"不"。</p>
+      </li>
+      <li class="reveal">
+        <h3>公开价目表当竞争武器</h3>
+        <p>认证业价格从不公开。它把 A ¥80 / B ¥60 / C ¥40 和固定 ¥40 签名分成全挂出来，等于提前杀死"我多付的钱去哪了"这个问题。</p>
+      </li>
+      <li class="reveal">
+        <h3>免费层故意做残</h3>
+        <p>grade U、不可引用、2 批/年上限。免费版拿不到"可被依赖"的东西，所以永远不会替代付费层。</p>
+      </li>
+      <li class="reveal">
+        <h3>主动自曝，把合规负债转成营销资产</h3>
+        <p>承认旧价 ¥15,000 是错的、承认 20 条记录全是模拟、承认无牌照无伙伴。这是反常识的：这个行业靠模糊赚钱。</p>
+      </li>
+      <li class="reveal">
+        <h3>结构性放弃咨询收入</h3>
+        <p>碳服务市场最大的一块被组织架构焊死。SGS / BV 两头吃咨询 + 验证长期被诟病，它直接自断后路。</p>
+      </li>
+      <li class="reveal">
+        <h3>转换成本不是合同，是证据链历史</h3>
+        <p>"Nothing is reset"。无排他条款，但换供应商等于历史归零。比合同锁更狠，且不损害客户利益。</p>
+      </li>
+      <li class="reveal">
+        <h3>它把"诚实"当成了唯一无法被复制的资产</h3>
+        <p>方法可以抄，价格可以跟，哈希可以重写。但一个敢在首页写"未认证、无伙伴、20 条全是模拟"的机构，抄起来需要付出品牌代价。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="close">
+  <div class="wrap">
+    <div class="eyebrow">05 — Standing</div>
+    <div class="two">
+      <div>
+        <h2>现状不是"一家公司"，<br>是一份很硬的方法论文档</h2>
+        <p style="margin-top:22px">一份方法论文档 + 一套很聪明的定价结构 + 20 条模拟记录 + 0 个签名伙伴。商业模式的设计成熟度，比执行领先约 18 个月。</p>
+        <p>真正的瓶颈不是模型，是<b style="color:var(--text)">第一张被第三方持证机构签字的真标签</b>。在它出现之前，上面所有精妙结构都还只是自我声明。</p>
+        <div class="callout yellow">
+          <p>这一条同样适用于我自己的分析：本文所有数字都来自公开网页的重新核算，没有内部数据。核算方法与局限见 <a href="method.html" class="accent">方法页</a>。</p>
+        </div>
+      </div>
+      <div class="side">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>状态</th><th>数量</th></tr></thead>
+            <tbody>
+              <tr><td>已发布方法论</td><td class="num">1 份（CJV-MTH-1.0）</td></tr>
+              <tr><td>注册表记录</td><td class="num">20 条模拟</td></tr>
+              <tr><td>真实签发的标签</td><td class="num bad">1 条</td></tr>
+              <tr><td>已签约持证伙伴</td><td class="num bad">0</td></tr>
+              <tr><td>认可资质</td><td class="num warn">未申请</td></tr>
+              <tr><td>可售且不需牌照的产品</td><td class="num good">3 个</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" style="margin-top:14px">数据来源：carbonverify.cn 公开页面，2026-11-09 抓取。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-col">
+        <h4>关于本站</h4>
+        <p>对 carbonverify.cn 的独立第三方拆解。与 ZeroCarbon Verify 无关联、未获授权、不代表其观点。所有批评基于公开页面可核查的信息。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面</h4>
+        <p><a href="model.html">商业模型</a> · <a href="revenue.html">收入模型</a></p>
+        <p><a href="bugs.html">破绽</a> · <a href="rebuild.html">重建方案</a></p>
+        <p><a href="method.html">方法与局限</a></p>
+      </div>
+      <div class="foot-col">
+        <h4>版本</h4>
+        <p class="mono">teardown v1.0 · 2026-11-09</p>
+        <p class="mono dim">built by Coda</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>方法与局限 — ZeroCarbon Verify 拆解</title>
+<meta name="description" content="分析方法、数据来源、核算口径，以及这份分析明确做不到的事。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      Teardown <small>carbonverify.cn</small>
+    </a>
+    <nav>
+      <div class="item"><a class="lnk" href="index.html">判决</a></div>
+      <div class="item">
+        <a class="lnk" href="model.html">模型</a>
+        <div class="dr">
+          <a href="model.html"><b>四层价值栈</b><span>谁付钱 / 谁签字 / 谁被免责</span></a>
+          <a href="model.html#unit"><b>单位经济性</b><span>单农场 ¥84,000 怎么算出来</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="revenue.html">收入</a>
+        <div class="dr">
+          <a href="revenue.html#engines"><b>六个引擎</b><span>只有两个能养活公司</span></a>
+          <a href="revenue.html#calc"><b>测算器</b><span>拖一下，看模型在哪断裂</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="bugs.html">破绽</a>
+        <div class="dr">
+          <a href="bugs.html#fatal"><b>致命 / 高 / 中</b><span>三处必须立刻修</span></a>
+          <a href="bugs.html#numbers"><b>数字打架</b><span>自称透明却自相矛盾</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="rebuild.html">重建</a>
+        <div class="dr">
+          <a href="rebuild.html#lines"><b>六条新业务线</b><span>我会从这里长出什么</span></a>
+          <a href="rebuild.html#plan"><b>90 天</b><span>先做哪一件</span></a>
+        </div>
+      </div>
+      <div class="item"><a class="lnk" href="method.html">方法</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section style="padding-top:72px">
+  <div class="wrap">
+    <div class="eyebrow">Method · 05</div>
+    <h1 style="font-size:clamp(32px,4.2vw,50px);max-width:20ch">方法与局限</h1>
+    <p class="lead" style="margin-top:24px">这是一份外部拆解，不是尽调报告。它用的全部是公开页面，全部数字是我从这些页面重新算出来或估算的。以下把可核与不可核分开写。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">01 — What I did</div>
+    <h2>三件事</h2>
+    <div class="grid g3" style="margin-top:32px">
+      <div class="card reveal">
+        <div class="num">01</div>
+        <h3>重算</h3>
+        <p>所有价格、人日、单位经济性都从公开页面重新推导，不引用它的结论。例如首验 ¥28,000 的毛利，是用它自己给的 6 人日 × ¥3,800 × 1.25 算出来的。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">02</div>
+        <h3>对照</h3>
+        <p>同一组数字在首页、专页、model 页、registry 页之间交叉比对。三处不一致是比对出来的，不是猜的。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">03</div>
+        <h3>压力测试</h3>
+        <p>把它的定价结构推到极端值（批次密度 50→1,000），看结构在哪一点失去一致性。测算器就是这一步的公开版本。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">02 — Limits</div>
+    <h2>这份分析明确做不到的事</h2>
+    <div class="tbl-wrap" style="margin-top:28px">
+      <table class="tbl">
+        <thead><tr><th>项目</th><th>状态</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td class="rh">内部财务数据</td><td class="num bad">没有</td><td>全部基于公开网页。任何关于成本、现金流、融资金额的说法都是推断。</td></tr>
+          <tr><td class="rh">真实签发成本 ¥3,000/次</td><td class="num warn">我的估算</td><td>基于 17065 级别签发的工时、责任准备金与保险分摊量级。你完全可以不同意具体数值 —— 结论只需要它 &gt; ¥40。</td></tr>
+          <tr><td class="rh">"500 批/年 typical" 的真实性</td><td class="num warn">无法核实</td><td>这是它的说法。测算器把它当作可调参数，而非事实。</td></tr>
+          <tr><td class="rh">创始人其他项目的关系</td><td class="num warn">仅页面线索</td><td>依据是 CJV 前缀、coffeejev.space 作为唯一 live label 来源、以及方法编号。未获得股权或控制关系的确证。</td></tr>
+          <tr><td class="rh">法律与监管判断</td><td class="num bad">不构成意见</td><td>涉及 HKAS、CNAS、EUDR、CBAM 的表述仅为结构性观察，不构成合规意见。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout yellow" style="margin-top:32px">
+      <p>这份分析的主要风险不是算错，是<b style="color:#fff">用外部视角误判内部约束</b>。比如"毛利≈0"在外部看是设计缺陷，在内部可能是有意的市场进入策略。我的判断只对公开可见的结构负责。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">03 — Sources</div>
+    <h2>抓取来源</h2>
+    <p class="small muted" style="margin-top:16px">全部页面抓取于 2026-11-09。分析与批评仅基于该日可公开访问的内容，站点后续修改不在本文覆盖范围内。</p>
+    <div class="tbl-wrap" style="margin-top:22px">
+      <table class="tbl">
+        <thead><tr><th>页面</th><th>用于</th></tr></thead>
+        <tbody>
+          <tr><td class="rh">/ 首页</td><td>三项产品与价格区间、状态条</td></tr>
+          <tr><td class="rh">/verified-unit/</td><td>已验证单元定义、等级 A/B/C 阈值、买方付费</td></tr>
+          <tr><td class="rh">/eudr/</td><td>集装箱包定价与交付物、已知缺口</td></tr>
+          <tr><td class="rh">/registry-eaas/</td><td>白标租户定价与买家类型</td></tr>
+          <tr><td class="rh">/establishment/fees.html</td><td>十二项服务价格、人日、日费率、加成</td></tr>
+          <tr><td class="rh">/establishment/two-track.html</td><td>两轨计划、CLG 结构、可以说与不可以说的话</td></tr>
+          <tr><td class="rh">/establishment/index.html</td><td>六层设立条件与未完成项</td></tr>
+          <tr><td class="rh">/model/</td><td>六条收入引擎、L0–L3 分层、免费层限制</td></tr>
+          <tr><td class="rh">/registry/</td><td>20 条模拟记录、唯一 live label、哈希字段</td></tr>
+          <tr><td class="rh">/platform/</td><td>FNV-1a 哈希链构造、API 端点</td></tr>
+          <tr><td class="rh">/certify/、/about/</td><td>案例流程、组织结构、认可状态</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3 style="margin-bottom:14px">声明</h3>
+    <p class="small muted" style="max-width:78ch">本站为独立第三方分析，与 ZeroCarbon Verify（carbonverify.cn）无任何关联、未获授权、不代表其观点，也不受其委托。文中所有批评基于公开页面可核查的信息，属商业分析范畴的意见表达，不构成对其经营、合规或法律状态的结论。本页内容不构成投资建议。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center">
+    <p class="note" style="margin:0">回到判决</p>
+    <a href="index.html" style="font-family:var(--mono);font-size:14px;color:var(--accent)">首页 →</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-col">
+        <h4>关于本站</h4>
+        <p>对 carbonverify.cn 的独立第三方拆解。与 ZeroCarbon Verify 无关联、未获授权、不代表其观点。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面</h4>
+        <p><a href="index.html">判决</a> · <a href="model.html">商业模型</a></p>
+        <p><a href="revenue.html">收入模型</a> · <a href="bugs.html">破绽</a> · <a href="rebuild.html">重建</a></p>
+      </div>
+      <div class="foot-col">
+        <h4>版本</h4>
+        <p class="mono">teardown v1.0 · 2026-11-09</p>
+        <p class="mono dim">built by Coda</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>商业模型解剖 — ZeroCarbon Verify 拆解</title>
+<meta name="description" content="四层价值栈、三方付款关系、单农场 ¥84,000 收入推导，以及为什么验证业务毛利≈0 是设计而非失误。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      Teardown <small>carbonverify.cn</small>
+    </a>
+    <nav>
+      <div class="item"><a class="lnk" href="index.html">判决</a></div>
+      <div class="item">
+        <a class="lnk" href="model.html">模型</a>
+        <div class="dr">
+          <a href="model.html"><b>四层价值栈</b><span>谁付钱 / 谁签字 / 谁被免责</span></a>
+          <a href="model.html#unit"><b>单位经济性</b><span>单农场 ¥84,000 怎么算出来</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="revenue.html">收入</a>
+        <div class="dr">
+          <a href="revenue.html#engines"><b>六个引擎</b><span>只有两个能养活公司</span></a>
+          <a href="revenue.html#calc"><b>测算器</b><span>拖一下，看模型在哪断裂</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="bugs.html">破绽</a>
+        <div class="dr">
+          <a href="bugs.html#fatal"><b>致命 / 高 / 中</b><span>三处必须立刻修</span></a>
+          <a href="bugs.html#numbers"><b>数字打架</b><span>自称透明却自相矛盾</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="rebuild.html">重建</a>
+        <div class="dr">
+          <a href="rebuild.html#lines"><b>六条新业务线</b><span>我会从这里长出什么</span></a>
+          <a href="rebuild.html#plan"><b>90 天</b><span>先做哪一件</span></a>
+        </div>
+      </div>
+      <div class="item"><a class="lnk" href="method.html">方法</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section style="padding-top:72px">
+  <div class="wrap">
+    <div class="eyebrow">Model · 01</div>
+    <h1 style="font-size:clamp(32px,4.2vw,50px);max-width:20ch">商业模型解剖</h1>
+    <p class="lead" style="margin-top:24px">它不试图成为认证机构。它把自己插在"计量"和"签字"之间，吃一段别人看不见的价差，同时拒绝承担签字的责任。这个位置选得极好，也好得有点危险。</p>
+  </div>
+</section>
+
+<section id="layers">
+  <div class="wrap">
+    <div class="eyebrow">01 — Layers</div>
+    <h2>四层，四种责任，四种钱</h2>
+
+    <div class="tbl-wrap" style="margin-top:30px">
+      <table class="tbl">
+        <thead>
+          <tr><th>层</th><th>谁做</th><th>需要牌照</th><th>收费</th><th>承担什么法律责任</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rh">① 计量</td>
+            <td>农场 / PLC / 电表 / 台账</td>
+            <td class="num">否</td>
+            <td class="num">¥0</td>
+            <td>数据本身的真实性</td>
+          </tr>
+          <tr>
+            <td class="rh">② 证据</td>
+            <td>ZeroCarbon Verify</td>
+            <td class="num good">否</td>
+            <td class="num">¥40–80 / 批<br>¥3k–8k / 柜<br>¥3–10万 / 年</td>
+            <td>方法一致性 —— <b style="color:var(--text)">不下任何结论</b></td>
+          </tr>
+          <tr>
+            <td class="rh">③ 签名</td>
+            <td>持证伙伴（未来自己）</td>
+            <td class="num bad">是</td>
+            <td class="num">¥40 / 批（固定）</td>
+            <td>结论</td>
+          </tr>
+          <tr>
+            <td class="rh">④ 使用</td>
+            <td>品牌 / 进口商 / 银行 / 保险</td>
+            <td class="num">否</td>
+            <td class="num">付费方</td>
+            <td>申报内容的真实性</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout" style="margin-top:34px">
+      <p>第 ② 层是整个模型成立的唯一原因：<b style="color:var(--text)">它是唯一一层既可以收费、又不需要牌照、还可以公开说"我错了"的位置</b>。第 ③ 层的牌照是租来的，第 ① 层的成本在客户身上，第 ④ 层的钱在预算里。中间这层没有护城河，只有精度。</p>
+    </div>
+
+    <div class="grid g3" style="margin-top:36px">
+      <div class="card reveal">
+        <div class="num">反常决策 01</div>
+        <h3>向买方收费，不向被验证方</h3>
+        <p>农场免费。因为一旦被验证方付钱，它买的是结论，不是证据。整个独立性叙事在第一天就废掉。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">反常决策 02</div>
+        <h3>签字费固定，不随结论浮动</h3>
+        <p>¥40 的关键不是贵或便宜，是<b style="color:var(--text)">恒定</b>。结论不能被定价，机构才可以说"不"。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">反常决策 03</div>
+        <h3>不做咨询，宁可少赚</h3>
+        <p>SGS / BV / TÜV 两头吃，长期被采购方诟病。用治理结构把这条后路焊死，是它最贵的一个决定。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="unit">
+  <div class="wrap">
+    <div class="eyebrow">02 — Unit economics</div>
+    <h2>单农场 ¥84,000 / 年，是怎么拼出来的</h2>
+    <p class="lead" style="margin-top:20px">按网站自己给的价格表和一个典型满产农场（500 批/年、全部 A 级）重算。所有单价都可以在它的 fee schedule 页面对上。</p>
+
+    <figure class="reveal">
+      <svg viewBox="0 0 1000 320" role="img" aria-label="单农场年度收入构成">
+        <title>单农场年度收入构成</title>
+        <desc>买方侧毛收入 40,000 元，其中签名分成 20,000 元流出，留存 20,000 元；供应侧 64,000 元；合计 84,000 元。</desc>
+
+        <text x="40" y="44" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8b98a5" letter-spacing="1.2">买方侧 · 500 批 × ¥80（A 级）</text>
+
+        <rect x="200" y="60" width="237" height="36" fill="#5c1a1e" stroke="#f4212e" stroke-width="1"/>
+        <text x="318" y="83" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ffb3b8" text-anchor="middle">签名分成 20,000</text>
+        <rect x="437" y="60" width="237" height="36" fill="#123a52" stroke="#1d9bf0" stroke-width="1"/>
+        <text x="555" y="83" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#a8d8fb" text-anchor="middle">证据层留存 20,000</text>
+        <text x="690" y="83" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#5c6b78">← 50% 流出</text>
+
+        <text x="40" y="136" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8b98a5" letter-spacing="1.2">供应侧 · 农场为自己付</text>
+
+        <rect x="200" y="152" width="332" height="36" fill="#0f2a22" stroke="#1f6f57" stroke-width="1"/>
+        <text x="366" y="175" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#b8e8d6" text-anchor="middle">首验 28,000</text>
+        <rect x="532" y="152" width="237" height="36" fill="#0f2a22" stroke="#1f6f57" stroke-width="1"/>
+        <text x="650" y="175" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#b8e8d6" text-anchor="middle">标签签发 20,000</text>
+        <rect x="769" y="152" width="143" height="36" fill="#0f2a22" stroke="#1f6f57" stroke-width="1"/>
+        <text x="840" y="175" font-family="IBM Plex Mono, monospace" font-size="12" fill="#b8e8d6" text-anchor="middle">监督 12,000</text>
+        <rect x="912" y="152" width="48" height="36" fill="#0f2a22" stroke="#1f6f57" stroke-width="1"/>
+
+        <line x1="40" y1="216" x2="960" y2="216" stroke="#2a3037" stroke-width="1"/>
+        <text x="40" y="248" font-family="Inter, sans-serif" font-size="14" fill="#c9d1d9">证据层实得</text>
+        <text x="200" y="250" font-family="IBM Plex Mono, monospace" font-size="22" font-weight="500" fill="#e7e9ea">¥84,000</text>
+        <text x="200" y="274" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#5c6b78">= 64,000 供应侧 + 20,000 买方侧留存   ·   分级评估 4,000 已计入</text>
+
+        <text x="700" y="248" font-family="Inter, sans-serif" font-size="13" fill="#8b98a5">持证方拿到</text>
+        <text x="700" y="272" font-family="IBM Plex Mono, monospace" font-size="18" fill="#ff8a92">¥20,000 / 500 次签发</text>
+        <text x="700" y="292" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#f4212e">= ¥40 / 次</text>
+      </svg>
+      <figcaption>图 2 · 500 批/年满产农场的年度收入拆解。签名分成按固定 ¥40/批计。</figcaption>
+    </figure>
+
+    <div class="two" style="margin-top:30px">
+      <div>
+        <h3 style="margin-bottom:16px">这两个数字互相矛盾</h3>
+        <p>买方侧每批付 ¥80，其中 ¥40 是固定签名分成。也就是说 —— <b style="color:var(--text)">批次越密，收入越像过路费，而持证方承担的责任线性增长、报酬却锁死在 ¥40</b>。</p>
+        <p>500 批/年意味着 500 次签发。任何持牌机构在做 17065 级别的签发时，单次的实际成本（评审工时 + 责任准备金 + 保险分摊）都在数千元量级，不是 ¥40。</p>
+        <div class="callout red">
+          <p>结论：<b style="color:#fff">A/B 级的买方侧价差不是利润，是一笔暂时还没被追讨的债务。</b>一旦持证伙伴开始按真实成本报价，¥40 的固定分成会立刻变成负数，整个买方侧定价表要重写。</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:16px">修法（我认为唯一可行的）</h3>
+        <ol class="steps" style="margin-top:6px">
+          <li>
+            <h3 style="font-size:15px">批次打包成"签发桶"</h3>
+            <p>每季 / 每柜签一次，覆盖同方法同边界的全部批次。签发数量降两个数量级，单次价格可以提到 ¥3,000–5,000 而不破坏买方侧定价。</p>
+          </li>
+          <li>
+            <h3 style="font-size:15px">签名费改为"底价 + 责任附加"</h3>
+            <p>底价 ¥800/签发，按声明货值加 0.1–0.3% 的责任附加。持证方的风险敞口和报酬重新对齐。</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="margin">
+  <div class="wrap">
+    <div class="eyebrow">03 — Margin</div>
+    <h2>为什么验证业务毛利 ≈ 0，而这是设计</h2>
+
+    <div class="tbl-wrap" style="margin-top:28px">
+      <table class="tbl">
+        <thead><tr><th>项目</th><th>数值</th><th>来源 / 推导</th></tr></thead>
+        <tbody>
+          <tr><td>首年 PCF 报价</td><td class="num">¥28,000 / 场</td><td>网站 fee schedule</td></tr>
+          <tr><td>投入人日</td><td class="num">6 人日</td><td>网站自述</td></tr>
+          <tr><td>日费率</td><td class="num">¥3,800</td><td>网站自述</td></tr>
+          <tr><td>间接成本加成</td><td class="num">25%</td><td>网站自述</td></tr>
+          <tr><td>实际成本</td><td class="num">6 × 3,800 × 1.25 = <b style="color:var(--text)">¥28,500</b></td><td>我核算</td></tr>
+          <tr><td>毛利</td><td class="num bad">−¥500</td><td>两数对减</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:24px;max-width:76ch">这不是失误。验证业务在这套模型里不是利润中心，是<b style="color:var(--text)">信任生产装置</b>：它生产"我见过现场"这个事实，把这个事实变成后续所有数据许可和注册表租用的前置条件。问题在于 —— 一家靠 ¥0 毛利业务获客、靠数据许可赚钱的公司，必须具备 SaaS 的销售效率，而它的销售对象是品牌采购部和法务部，那是地球上最慢的客户。</p>
+
+    <div class="grid g3" style="margin-top:34px">
+      <div class="card reveal">
+        <div class="num">后果 01</div>
+        <h3>销售周期 ≠ 现金流周期</h3>
+        <p>品牌采购决策 6–12 个月，而验证业务每月只能覆盖自身成本。中间的资金缺口必须由外部资金填。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">后果 02</div>
+        <h3>规模不带来杠杆</h3>
+        <p>多接 10 场验证 = 多 60 人日。人日业务没有边际成本递减，只有招聘。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">后果 03</div>
+        <h3>唯一的杠杆在注册表</h3>
+        <p>白标租户多一个，边际成本接近零。这才是这家公司里唯一像软件的部分 —— 也是唯一值得融资的部分。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="breakeven">
+  <div class="wrap">
+    <div class="eyebrow">04 — Breakeven</div>
+    <h2>要多少单才不死</h2>
+    <p class="lead" style="margin-top:18px">假设香港团队 5 人（技术负责人 1、审核员 2、商务 1、运营 1），人均月成本 HK$45,000，加 30% 间接费用。约 HK$350 万 / 年 ≈ <span class="mono">¥320 万</span>。</p>
+
+    <div class="tbl-wrap" style="margin-top:30px">
+      <table class="tbl">
+        <thead><tr><th>路径</th><th>单价</th><th>需要</th><th>可行性</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="rh">供应商证据计划</td>
+            <td class="num">¥80,000 / 年</td>
+            <td class="num">40 个品牌</td>
+            <td><span class="pill a">最高</span> 客单价高、可续费</td>
+          </tr>
+          <tr>
+            <td class="rh">注册表白标</td>
+            <td class="num">¥30,000 / 年</td>
+            <td class="num">107 个租户</td>
+            <td><span class="pill b">中</span> 全球符合条件的机构不足千级</td>
+          </tr>
+          <tr>
+            <td class="rh">首年验证</td>
+            <td class="num">¥28,000 / 场</td>
+            <td class="num">115 场 / 年</td>
+            <td><span class="pill d">低</span> 需 690 人日 ≈ 3.5 个全职审核员，无毛利</td>
+          </tr>
+          <tr>
+            <td class="rh">EUDR 集装箱包</td>
+            <td class="num">¥5,000 / 柜</td>
+            <td class="num">640 柜 / 年</td>
+            <td><span class="pill c">中高</span> 但受 EU 延期与简化影响</td>
+          </tr>
+          <tr>
+            <td class="rh">数据许可（银行 + 保险）</td>
+            <td class="num">¥120,000 / 年</td>
+            <td class="num">27 家</td>
+            <td><span class="pill c">中</span> 单笔最大，周期最长</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout green" style="margin-top:30px">
+      <p>看清这张表，公司的战略就只剩一句话：<b style="color:#fff">把所有资源压在"供应商证据计划"上，其余五条收入线只用来做信任背书和获客素材。</b>网站现在把六条线并列展示，读者会以为这是组合拳；实际上它们是六种不同的公司。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center">
+    <p class="note" style="margin:0">下一页 · 六个引擎逐条拆，附交互测算器</p>
+    <a href="revenue.html" style="font-family:var(--mono);font-size:14px;color:var(--accent)">收入模型 →</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-col">
+        <h4>关于本站</h4>
+        <p>对 carbonverify.cn 的独立第三方拆解。与 ZeroCarbon Verify 无关联、未获授权、不代表其观点。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面</h4>
+        <p><a href="index.html">判决</a> · <a href="revenue.html">收入模型</a></p>
+        <p><a href="bugs.html">破绽</a> · <a href="rebuild.html">重建方案</a></p>
+      </div>
+      <div class="foot-col">
+        <h4>版本</h4>
+        <p class="mono">teardown v1.0 · 2026-11-09</p>
+        <p class="mono dim">built by Coda</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

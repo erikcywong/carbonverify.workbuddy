@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>收入模型与测算器 — ZeroCarbon Verify 拆解</title>
+<meta name="description" content="六条收入引擎逐条拆解，附单农场经济性交互测算器：拖动批次密度，看模型在哪里断裂。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      Teardown <small>carbonverify.cn</small>
+    </a>
+    <nav>
+      <div class="item"><a class="lnk" href="index.html">判决</a></div>
+      <div class="item">
+        <a class="lnk" href="model.html">模型</a>
+        <div class="dr">
+          <a href="model.html"><b>四层价值栈</b><span>谁付钱 / 谁签字 / 谁被免责</span></a>
+          <a href="model.html#unit"><b>单位经济性</b><span>单农场 ¥84,000 怎么算出来</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="revenue.html">收入</a>
+        <div class="dr">
+          <a href="revenue.html#engines"><b>六个引擎</b><span>只有两个能养活公司</span></a>
+          <a href="revenue.html#calc"><b>测算器</b><span>拖一下，看模型在哪断裂</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="bugs.html">破绽</a>
+        <div class="dr">
+          <a href="bugs.html#fatal"><b>致命 / 高 / 中</b><span>三处必须立刻修</span></a>
+          <a href="bugs.html#numbers"><b>数字打架</b><span>自称透明却自相矛盾</span></a>
+        </div>
+      </div>
+      <div class="item">
+        <a class="lnk" href="rebuild.html">重建</a>
+        <div class="dr">
+          <a href="rebuild.html#lines"><b>六条新业务线</b><span>我会从这里长出什么</span></a>
+          <a href="rebuild.html#plan"><b>90 天</b><span>先做哪一件</span></a>
+        </div>
+      </div>
+      <div class="item"><a class="lnk" href="method.html">方法</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section style="padding-top:72px">
+  <div class="wrap">
+    <div class="eyebrow">Revenue · 02</div>
+    <h1 style="font-size:clamp(32px,4.2vw,50px);max-width:24ch">六个引擎，<br>只有两个是真的</h1>
+    <p class="lead" style="margin-top:24px">网站列出六条收入线，读起来像组合拳。但把它们按"到 ¥320 万盈亏平衡需要多少单"重排之后，其中四条会自己掉出表格。</p>
+  </div>
+</section>
+
+<section id="engines">
+  <div class="wrap">
+    <div class="eyebrow">01 — Engines</div>
+    <h2>六条引擎的真实排序</h2>
+
+    <div class="tbl-wrap" style="margin-top:30px">
+      <table class="tbl">
+        <thead>
+          <tr><th>引擎</th><th>买家</th><th>单价</th><th>到 ¥320 万需</th><th>我的判断</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rh">供应商证据计划</td>
+            <td>品牌 / 零售 / 进口商</td>
+            <td class="num">¥8 / 24 / 48 万 · 年</td>
+            <td class="num">7–40 个品牌</td>
+            <td><span class="pill a">真引擎</span> 客单价高、可续费、有采购预算科目</td>
+          </tr>
+          <tr>
+            <td class="rh">注册表白标</td>
+            <td>持证机构 / 协会 / ERP</td>
+            <td class="num">¥3–10 万 / 年<br>+ ¥10–40 / 条</td>
+            <td class="num">40–107 个租户</td>
+            <td><span class="pill a">真引擎</span> 边际成本近零，唯一有软件毛利的线</td>
+          </tr>
+          <tr>
+            <td class="rh">绿色金融数据许可</td>
+            <td>银行 / 融资租赁</td>
+            <td class="num">¥5–15 万 / 机构 · 年</td>
+            <td class="num">22–64 家</td>
+            <td><span class="pill b">潜力最大</span> 单笔最大，但金融机构采购比品牌更慢</td>
+          </tr>
+          <tr>
+            <td class="rh">保险数据许可</td>
+            <td>承保人 / 经纪</td>
+            <td class="num">¥8–25 万 / 组合 · 年</td>
+            <td class="num">13–40 个</td>
+            <td><span class="pill b">高价值</span> 需要精算可验证的损失数据，至少 3 年积累</td>
+          </tr>
+          <tr>
+            <td class="rh">EUDR 集装箱包</td>
+            <td>欧盟进口商 / 出口商</td>
+            <td class="num">¥3,000–8,000 / 柜</td>
+            <td class="num">400–1,000 柜</td>
+            <td><span class="pill c">窗口业务</span> 决策快、痛点真，但受 EU 延期与简化影响</td>
+          </tr>
+          <tr>
+            <td class="rh">时因子调度分成</td>
+            <td>农场 / 冷库 / 育苗场</td>
+            <td class="num">省下电费的 20%</td>
+            <td class="num">不可预测</td>
+            <td><span class="pill d">不是收入</span> 是获客钩子，且"省下的电费"极易争议</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two" style="margin-top:44px">
+      <div>
+        <h3>被藏在价格表里的十二项服务</h3>
+        <p class="small muted">首验 28,000 · 监督 12,000 · 基线共签 6,000 · 分级评估 4,000 · 台账完整性 8,000 · 决策记录 15,000 · MRV 系统审计 20,000 · 争议复核 3,000 · 方法论采纳 80,000 起 · 培训 3,500/人 · 标签牌照（含在年费）· 二手评估（另议）</p>
+        <p style="margin-top:18px">这十二项加起来能撑起一家体面的咨询公司，但<b style="color:var(--text)">毛利全部趋近于零</b>，因为每一项都是人日。它们是信任的生产装置，不是利润表上的行。</p>
+      </div>
+      <div>
+        <h3>一个常被忽略的结构事实</h3>
+        <p>它的收入按"谁付钱"分成两半，而这两半的<strong>记账方式完全不同</strong>：</p>
+        <ul style="color:#c9d1d9;font-size:15px;padding-left:20px;line-height:1.8">
+          <li><b style="color:var(--text)">供应侧</b>（农场付）—— 按项目计，人日驱动，可预测性差</li>
+          <li><b style="color:var(--text)">买方侧</b>（品牌付）—— 按件计，几乎全是过路费</li>
+          <li><b style="color:var(--text)">租户侧</b>（机构付）—— 按年计，SaaS 属性</li>
+        </ul>
+        <p style="margin-top:14px">三条线需要三种完全不同的销售组织、三种核算方式、三种估值倍数。一家 5 人的公司同时跑三条，是它最被低估的风险。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="wrap">
+    <div class="eyebrow">02 — Live model</div>
+    <h2>拖一下，看它在哪断裂</h2>
+    <p class="lead" style="margin-top:18px">下面是它的公开价格表的直接实现。改批次密度和等级结构，看签名分成如何吃掉证据层的留存。</p>
+
+    <div class="calc" id="calcbox">
+      <div class="calc-head">
+        <h3>单农场年度经济性</h3>
+        <span>¥ CNY · 500 批/年为满产基准</span>
+      </div>
+      <div class="calc-body">
+        <div class="calc-in">
+          <div class="fld">
+            <label>批次密度 <b id="c-batches-v">500 批/年</b></label>
+            <input type="range" id="c-batches" min="50" max="1000" step="25" value="500">
+          </div>
+          <div class="fld">
+            <label>A 级占比 <b id="c-shareA-v">60% A</b></label>
+            <input type="range" id="c-shareA" min="0" max="100" step="5" value="60">
+            <div class="mix" id="c-mix">
+              <i class="mix-a" style="width:60%"></i>
+              <i class="mix-b" style="width:20%"></i>
+              <i class="mix-c" style="width:20%"></i>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:9px" class="note">
+              <span style="color:var(--good)">A <span id="c-mix-a">60%</span> ¥80</span>
+              <span style="color:var(--accent)">B <span id="c-mix-b">20%</span> ¥60</span>
+              <span style="color:var(--warn)">C <span id="c-mix-c">20%</span> ¥40</span>
+            </div>
+          </div>
+          <p class="note" style="margin:0">C 级上限锁在 45%（方法规定 C = 计量占比 &lt; 45%），剩余部分自动归 B。</p>
+        </div>
+
+        <div class="calc-out">
+          <div class="out-row">
+            <span>买方侧毛收入</span><b id="o-buyer">—</b>
+          </div>
+          <div class="out-row neg">
+            <span>签名分成（¥40 × 批次）</span><b id="o-sig">—</b>
+          </div>
+          <div class="out-row big">
+            <span>证据层实得 · 买方侧</span><b id="o-keep">—</b>
+          </div>
+          <div class="out-row">
+            <span>供应侧（首验 + 监督 + 标签 + 分级）</span><b id="o-supplier">—</b>
+          </div>
+          <div class="out-row big">
+            <span>单场合计</span><b id="o-total">—</b>
+          </div>
+          <div class="out-row">
+            <span>持证方真实签发成本（¥3,000/次）</span><b id="o-real" style="color:var(--muted)">—</b>
+          </div>
+          <div class="out-row neg">
+            <span>无人承担的缺口</span><b id="o-gap">—</b>
+          </div>
+          <div class="verdict" id="o-verdict">—</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="note" style="max-width:80ch">"真实签发成本 ¥3,000/次"是我的估算，不是网站的数字：一次 17065 级别的签发需要评审工时、责任准备金与保险分摊。你可以不同意具体数值，但任何大于 ¥40 的估值都会让同一处断裂出现 —— 这才是重点。</p>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow">03 — Pricing craft</div>
+    <h2>定价结构里的三处高明，与三处失真</h2>
+
+    <div class="grid g3" style="margin-top:34px">
+      <div class="card reveal">
+        <div class="num">高明 01</div>
+        <h3>免费层被设计成不可依赖</h3>
+        <p>grade U + 无 statement reference。免费用户拿到的是一张贴纸，不是一份可以被审计引用的东西。所以免费层永远不可能替代付费层 —— 这是绝大多数 freemium 都做错的地方。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">高明 02</div>
+        <h3>等级差价 = 数据质量差价</h3>
+        <p>A ¥80 / B ¥60 / C ¥40 卖的不是"更好的结论"，是"更高比例的实测数据"。买家为可核查性付费，而不是为结论便利付费 —— 这让价格在道德上站得住。</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">高明 03</div>
+        <h3>把签名费公开，等于把腐败成本公开</h3>
+        <p>任何想让结论改向的人，现在都知道行贿的标的是 ¥40。金额太小，不值得腐化；金额公开，腐化就会被看见。这是一个用定价做的反腐设计。</p>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card danger reveal">
+        <div class="num">失真 01</div>
+        <h3>¥40 抵不过责任</h3>
+        <p>见上一节测算。这不是定价技巧问题，是产品结构问题：批次级的粒度，配上柜台级的签字费。</p>
+      </div>
+      <div class="card danger reveal">
+        <div class="num">失真 02</div>
+        <h3>EUDR 包有两个价</h3>
+        <p>首页与专页写 ¥3,000–8,000/柜，model 页写 ¥2,000/柜。差 33%–75%。在一个把"价格公开"当卖点的站上，这是硬伤。</p>
+      </div>
+      <div class="card danger reveal">
+        <div class="num">失真 03</div>
+        <h3>20% 的分成结构不可核</h3>
+        <p>"省下电费的 20%"没有基线定义权、没有测量方、没有争议仲裁条款。这种定价在合同阶段一定会变成固定费用 —— 也就是说，它实际不是收入模型的一部分。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center">
+    <p class="note" style="margin:0">下一页 · 三处会致命的破绽，以及它们各自的修法</p>
+    <a href="bugs.html" style="font-family:var(--mono);font-size:14px;color:var(--accent)">破绽 →</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-col">
+        <h4>关于本站</h4>
+        <p>对 carbonverify.cn 的独立第三方拆解。与 ZeroCarbon Verify 无关联、未获授权、不代表其观点。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面</h4>
+        <p><a href="index.html">判决</a> · <a href="model.html">商业模型</a></p>
+        <p><a href="bugs.html">破绽</a> · <a href="rebuild.html">重建方案</a></p>
+      </div>
+      <div class="foot-col">
+        <h4>版本</h4>
+        <p class="mono">teardown v1.0 · 2026-11-09</p>
+        <p class="mono dim">built by Coda</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
